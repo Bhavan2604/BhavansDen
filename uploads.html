@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Upload Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload New Update</h2>
+        <div class="form-group">
+            <label for="updateImage">Update Image</label>
+            <input type="file" id="updateImage">
+        </div>
+        <div class="form-group">
+            <label for="updateText">Update Text</label>
+            <textarea id="updateText"></textarea>
+        </div>
+        <div class="form-group">
+            <button onclick="uploadUpdate()">Upload Update</button>
+        </div>
+
+        <h2>Upload New Project</h2>
+        <div class="form-group">
+            <label for="projectTitle">Project Title</label>
+            <input type="text" id="projectTitle">
+        </div>
+        <div class="form-group">
+            <label for="projectDescription">Project Description</label>
+            <textarea id="projectDescription"></textarea>
+        </div>
+        <div class="form-group">
+            <button onclick="uploadProject()">Upload Project</button>
+        </div>
+    </div>
+
+    <script>
+        function uploadUpdate() {
+            const imageInput = document.getElementById('updateImage');
+            const textInput = document.getElementById('updateText');
+            if (imageInput.files.length > 0 && textInput.value.trim() !== "") {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imgSrc = e.target.result;
+                    const update = { img: imgSrc, text: textInput.value };
+                    let updates = JSON.parse(localStorage.getItem('updates')) || [];
+                    updates.push(update);
+                    localStorage.setItem('updates', JSON.stringify(updates));
+                    alert('Update uploaded successfully!');
+                };
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                alert('Please select an image and enter some text.');
+            }
+        }
+
+        function uploadProject() {
+            const titleInput = document.getElementById('projectTitle');
+            const descriptionInput = document.getElementById('projectDescription');
+            if (titleInput.value.trim() !== "" && descriptionInput.value.trim() !== "") {
+                const project = { title: titleInput.value, description: descriptionInput.value };
+                let projects = JSON.parse(localStorage.getItem('projects')) || [];
+                projects.push(project);
+                localStorage.setItem('projects', JSON.stringify(projects));
+                alert('Project uploaded successfully!');
+            } else {
+                alert('Please enter a title and description.');
+            }
+        }
+    </script>
+</body>
+</html>
