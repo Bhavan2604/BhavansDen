@@ -126,3 +126,26 @@ nav a:hover {
 .form-group button:hover {
     background-color: #45a049;
 }
+
+/* Existing styles */
+.about-content {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
