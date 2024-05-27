@@ -6,12 +6,41 @@ body {
 }
 
 header {
-    background-image: url('banner.jpg'); /* Replace 'header-background.jpg' with the path to your background image */
+    background-image: url('banner.jpg'); /* Replace 'banner.jpg' with the path to your banner image */
     background-size: cover;
     background-position: center;
-    /*color: white;
-    padding: 20px 0;*/
+    color: white;
+    padding: 60px 0; /* Adjust padding as needed */
     text-align: center;
+    position: relative;
+}
+
+header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Solid white color with 80% opacity */
+    border-radius: 20px; /* Adjust border radius as needed for curved rectangle effect */
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    color: #333; /* Change text color to dark gray */
+    font-size: 36px; /* Adjust font size as needed */
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #555; /* Change text color to light gray */
+    font-size: 18px; /* Adjust font size as needed */
+    margin-bottom: 20px;
 }
 
 
