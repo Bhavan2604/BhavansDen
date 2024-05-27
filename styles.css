@@ -10,7 +10,7 @@ header {
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 60px 0; /* Adjust padding as needed */
+    /*padding: 60px 0;  Adjust padding as needed */
     text-align: center;
     position: relative;
 }
