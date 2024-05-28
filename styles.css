@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #333131;*/
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;  /* Adjust the width to make it slimmer */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;  /* Track color */
+    border-radius: 10px;  /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;  /* Scrollbar color */
+    border-radius: 10px;  /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;  /* Scrollbar color on hover */
+}
+
+/* Custom scrollbar for Firefox */
+html {
+    scrollbar-width: thin;  /* Options: auto, thin */
+    scrollbar-color: #888 #f0f0f0;  /* Scrollbar color and track color */
+}
+
+header {
+    background-image: url('banner.png'); /* Replace 'banner.jpg' with the path to your banner image */
+    background-size: cover;
+    background-position: center;
+    color: blue;
+    padding: 60px 0;  /*Adjust padding as needed */
+    text-align: center;
+    position: relative;
+}
+
+
+
+header:before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50%; /* Adjust left position to center the rectangle horizontally */
+    transform: translateX(-50%); /* Center the rectangle horizontally */
+    width: 414px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.8); /* Solid white color with 80% opacity */
+    border-radius: 20px; /* Adjust border radius as needed for curved rectangle effect */
+}
+
+
+header h1, header p {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    color: #333; /* Change text color to dark gray */
+    font-size: 36px; /* Adjust font size as needed */
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #555; /* Change text color to light gray */
+    font-size: 18px; /* Adjust font size as needed */
+    margin-bottom: 20px;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.updates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.update {
+    background: white;
+    border-radius: 10px;
+    width: 45%;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.update img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.about {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.about img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.banner {
+    width: 100%;
+    height: 300px;
+    background: url('banner.jpg') no-repeat center center/cover;
+}
+
+.projects {
+    padding: 20px 0;
+}
+
+.project {
+    background: white;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+/* Existing styles */
+.about-content {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+

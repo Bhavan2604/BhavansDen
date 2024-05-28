@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavan Sai Pasupuleti - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bhavan Sai Pasupuleti</h1>
+        <p>Student at Amaatra Academy | Class 11</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="profiles.html">My Profiles</a>
+        <a href="projects.html">Projects</a>
+        <!-- <a href="upload.html">Admin</a> -->
+    </nav>
+    <div class="container">
+        <div class="updates" id="updates">
+            <!-- Updates will be loaded here dynamically -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadContent();
+        });
+
+        function loadContent() {
+            const updates = [
+                { img: 'image1.jpg', title: 'Website Launch', text: 'This website was made by me on 28th May. The development of this website started on 27th May and was develloped by me with the help of ChatGPT.' },
+                // { img: 'image2.jpg', title: 'Another Update', text: 'Another update with a description next to a circular image. Content can vary.' }
+            ];
+
+            const updatesContainer = document.getElementById('updates');
+            updates.forEach(update => {
+                const updateElement = document.createElement('div');
+                updateElement.className = 'update';
+                updateElement.innerHTML = `
+                    <img src="${update.img}" alt="Update Image">
+                    <div class="update-info">
+                        <h3>${update.title}</h3>
+                        <p>${update.text}</p>
+                    </div>`;
+                updatesContainer.appendChild(updateElement);
+            });
+        }
+    </script>
+</body>
+</html>

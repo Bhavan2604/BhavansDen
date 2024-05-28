@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavan Sai Pasupuleti - My Profiles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .profile {
+            background: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .profile-info p {
+            margin: 0;
+        }
+
+        .profile-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .profile-button:hover {
+            background-color: #45a049;
+        } 
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bhavan Sai Pasupuleti</h1>
+        <p>Student at Amaatra Academy | Class 11</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="profiles.html">My Profiles</a>
+        <a href="projects.html">Projects</a>
+        <!-- <a href="upload.html">Admin</a> -->
+    </nav>
+    <div class="container">
+        <h2>My Profiles</h2>
+        <div class="profiles" id="profiles-list">
+            <!-- Profiles will be loaded here dynamically -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProfiles();
+        });
+
+        function loadProfiles() {
+            const profiles = [
+                { logo: 'tryhackme-logo.jpg' , title: 'TryHackMe' , url: 'https://tryhackme.com/p/bhavan' },
+                { logo: 'github-logo.png', title: 'GitHub', url: 'https://github.com/bhavan2604' },
+                { logo: 'linkedin-logo.png', title: 'LinkedIn', url: 'https://www.linkedin.com/in/bhavan-sai-pasupuleti/' },
+                { logo: 'discord-logo.png', title: 'Discord', url: 'https://www.discordapp.com/users/bhavan./' },
+                { logo: 'instagram-logo.png' , title: 'Instagram' , url: 'https://www.instagram.com/bhavan_sai_p/'},
+                { logo: 'gmail-logo.png' , title: 'Gmail' , url: 'mailto:bhavansaipasupuleti@gmail.com'}
+                // Add more profiles as needed
+                // TryHackMe
+                // Github
+                // Linkedin
+                // Discord
+                // Instagram
+                // Gmail
+
+            ];
+
+            const profilesContainer = document.getElementById('profiles-list');
+            profiles.forEach(profile => {
+                const profileElement = document.createElement('div');
+                profileElement.className = 'profile';
+                profileElement.innerHTML = `
+                    <img src="${profile.logo}" alt="${profile.title} Logo">
+                    <div class="profile-info">
+                        <h3>${profile.title}</h3>
+                        <p>Connect with me on ${profile.title}!!!</p>
+                    </div>
+                    <a href="${profile.url}" class="profile-button" target="_blank">Visit</a>
+                `;
+                profilesContainer.appendChild(profileElement);
+            });
+        }
+    </script>
+</body>
+</html>

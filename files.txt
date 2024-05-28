@@ -1,0 +1,6 @@
+banner.jpg
+image1.jpg
+image2.jpg
+profile.jpg
+
+logo's
