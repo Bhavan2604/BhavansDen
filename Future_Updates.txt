@@ -1,0 +1,2 @@
+Change the main theme from grey to either BLACK or to some Vibrant color. Right now the site is appearing boring.
+Make the method to upload Updates and Projects better( make it such that source code doesn't need to be changed)
